@@ -15,7 +15,7 @@ from pybureau.interior import validate
 try:
   validate("123456") # validates ID card
 except InvalidCardError, e:
-  print("Ouch, this ID card is invalid!")
+  print "Ouch, this ID card is invalid!"
 ```
 
 ### Django Validators

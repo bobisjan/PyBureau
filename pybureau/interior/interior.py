@@ -1,3 +1,4 @@
+from __future__ import unicode_literals
 
 import sys
 import urllib
@@ -52,8 +53,8 @@ def _error(dom):
 
 if __name__ == "__main__":
   if not len(sys.argv) in [2, 3]:
-    print('Pass card number, and type (0 by default) as a function argument')
-    print('Card types:\n0 ... identity card\n4 ... central passport (purple)\n5 ... local passport (green)\n6 ... firearms license')
+    print 'Pass card number, and type (0 by default) as a function argument'
+    print 'Card types:\n0 ... identity card\n4 ... central passport (purple)\n5 ... local passport (green)\n6 ... firearms license'
     sys.exit(2)
 
   number = sys.argv[1]
@@ -63,8 +64,8 @@ if __name__ == "__main__":
 
   try:
     validate(number, type)
-    print('Card with number %s is NOT INVALID' % number)
+    print 'Card with number %s is NOT INVALID' % number
   except InvalidCardError:
-    print('Card with number %s is INVALID' % number)
+    print 'Card with number %s is INVALID' % number
 
   sys.exit(1)
