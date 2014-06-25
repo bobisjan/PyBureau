@@ -20,8 +20,18 @@ class CardValidator(object):
 
     @classmethod
     def validate(cls, number, type=TYPE_ID):
-        data = urllib.urlencode({ 'dotaz': number, 'doklad': type })
+        '''Detect and invalid card (IDs, passports, etc.) against the central repository provided by the ministry.
 
+        Keyword arguments:
+        number -- string with card number
+        type -- integer of card type
+                0 (default) ... identity card
+                4 ... passport (central, purple)
+                5 ... passport (local, green)
+                6 ... firearms license
+
+        '''
+        data = urllib.urlencode({ 'dotaz': number, 'doklad': type })
         request = urllib2.Request(cls.URL, data)
         response = urllib2.urlopen(request)
 
