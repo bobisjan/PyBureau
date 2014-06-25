@@ -10,12 +10,12 @@ Module `interior` is for an invalid card (IDs, passports, etc.) detection agains
 ### Basic Usage
 
 ```python
-from pybureau.interior import validate
+from pybureau.interior import CardValidator
 
 try:
-  validate("123456") # validates ID card
+  CardValidator.validate('1234') # validates ID card
 except InvalidCardError, e:
-  print "Ouch, this ID card is invalid!"
+  print 'Ouch, this ID card is invalid!'
 ```
 
 ### Django Validators
@@ -25,7 +25,7 @@ from pybureau.interior.validators import id_validator
 from django import forms
 
 class UserForm(forms.Form):
-  id_card = forms.IntegerField(required=True, validators=[id_validator])
+  id_card = forms.CharField(blank=False, null=False, max_length=30, required=True, validators=[id_validator])
 ```
 
 ## Contact
