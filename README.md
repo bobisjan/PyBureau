@@ -1,11 +1,10 @@
-# PyBureau
+# PyBureau [![Build Status](https://secure.travis-ci.org/bobisjan/PyBureau.png?branch=next)](http://travis-ci.org/bobisjan/PyBureau)
 
 Set of utilities based on the applications provided by the administration authorities in the Czech Republic.
 
 ## Ministry of the Interior
 
 Module `interior` is for an invalid card (IDs, passports, etc.) detection against the central repository provided by the ministry.
-
 
 ### Basic Usage
 
