@@ -49,7 +49,7 @@ class CardValidator(object):
         elements = dom.getElementsByTagName('chyba');
         if elements:
             error = elements.pop()
-            raise Exception('Error returned from the remote server: %s', cls._text(error.childNodes))
+            raise ValueError('Error returned from the remote server: %s', cls._text(error.childNodes))
 
 
 if __name__ == '__main__':
